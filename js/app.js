@@ -32,7 +32,7 @@ console.dir(slidesWrapperElement)
 // appendo li(img) in wrapper
 // ------------------------------------------------------------
 // ciclo for
-for ( let i=0; i < slides.length; i++){
+for (let i = 0; i < slides.length; i++) {
 
     // creo li
     const li = document.createElement('li')
@@ -41,7 +41,7 @@ for ( let i=0; i < slides.length; i++){
     li.className = 'slide'
 
     // aggiungo classe active a currentIndex 
-    if ( i === currentIndex){
+    if (i === currentIndex) {
         li.classList.add('active')
     }
 
@@ -78,12 +78,12 @@ for ( let i=0; i < slides.length; i++){
 const nextArrowElement = document.querySelector('.arrow-next')
 
 // add listener
-nextArrowElement.addEventListener('click', function(){
+nextArrowElement.addEventListener('click', function () {
     // sapendo che la classe active è posta sull'img con currentIndex = 0 
     // creiamo una const con la classe attiva
-    const slideAttiva= slideElements[currentIndex]
+    const slideAttiva = slideElements[currentIndex]
     // togliamo la classe a currentIndex=0
-    slideAttiva.remove('active')
+    slideAttiva.classList.remove('active')
     // creo const di img successiva 
     const slideSuccessiva = slideElements[currentIndex + 1]
     // aggiungiamo all'img successiva la classe active al click 
@@ -91,6 +91,28 @@ nextArrowElement.addEventListener('click', function(){
 
     // facciamo sì che ad ogni click il nostro currentIndex aggiunga + 1 a se stesso, per cabiare img
     currentIndex++
+
+
+})
+
+// ----------------------
+// UGUAL MODO 
+// freccia prev
+
+const prevArrowElement = document.querySelector('.arrow-prev')
+
+// add listener
+prevArrowElement.addEventListener('click', function () {
+
+    const slideAttiva = slideElements[currentIndex]
+    slideAttiva.classList.remove('active')
+
     
+    const slideSuccessiva = slideElements[currentIndex + 1]
+    slideSuccessiva.classList.add('active')
+
+    currentIndex++
+
+
 
 })
