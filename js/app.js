@@ -67,3 +67,30 @@ for ( let i=0; i < slides.length; i++){
     console.log(li)
 }
 // -----------------------------------------------------------------
+
+// IMPLEMENTARE CONTROL ARROWS
+// estrapoliamo freccia next
+// creiamo un listener che al click 
+// tolga la classe active alla prima img
+// aggiunga la classe acive all'img successiva
+
+// estrapoliamo freccia next
+const nextArrowElement = document.querySelector('.arrow-next')
+
+// add listener
+nextArrowElement.addEventListener('click', function(){
+    // sapendo che la classe active è posta sull'img con currentIndex = 0 
+    // creiamo una const con la classe attiva
+    const slideAttiva= slideElements[currentIndex]
+    // togliamo la classe a currentIndex=0
+    slideAttiva.remove('active')
+    // creo const di img successiva 
+    const slideSuccessiva = slideElements[currentIndex + 1]
+    // aggiungiamo all'img successiva la classe active al click 
+    slideSuccessiva.classList.add('active')
+
+    // facciamo sì che ad ogni click il nostro currentIndex aggiunga + 1 a se stesso, per cabiare img
+    currentIndex++
+    
+
+})
