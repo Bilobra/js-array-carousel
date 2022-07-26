@@ -1,0 +1,63 @@
+/* regole base */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+ul,ol,menu{
+    list-style: none;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+/* CONTAINER */
+.container{
+    max-width: 900px;
+    margin: 200px auto;
+
+}
+
+/* SLIDER */
+
+.slider{
+    position: relative;
+}
+
+/* SLIDER ITEMS */
+
+.slide{
+    display: none;
+}
+.slide.active{
+    display: block;
+}
+.slide img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px ;
+}
+
+/* .slides-wrapper{
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px ;
+} */
+
+/* ARROWS */
+.arrows{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 4rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    color: white;
+   
+}
