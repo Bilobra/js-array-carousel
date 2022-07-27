@@ -81,16 +81,24 @@ const nextArrowElement = document.querySelector('.arrow-next')
 nextArrowElement.addEventListener('click', function () {
     // sapendo che la classe active è posta sull'img con currentIndex = 0 
     // creiamo una const con la classe attiva
+    const lastIndex = slideElements.length - 1
+
     const slideAttiva = slideElements[currentIndex]
     // togliamo la classe a currentIndex=0
     slideAttiva.classList.remove('active')
+    if ( currentIndex < lastIndex){
+        // se non siamo arrivati alla fine aumentiamo l'indice
+        currentIndex++
+    }else{
+        currentIndex = 0
+    }
     // creo const di img successiva 
-    const slideSuccessiva = slideElements[currentIndex + 1]
+    const slideSuccessiva = slideElements[currentIndex]
     // aggiungiamo all'img successiva la classe active al click 
     slideSuccessiva.classList.add('active')
 
     // facciamo sì che ad ogni click il nostro currentIndex aggiunga + 1 a se stesso, per cabiare img
-    currentIndex++
+    
 
 
 })
@@ -103,15 +111,22 @@ const prevArrowElement = document.querySelector('.arrow-prev')
 
 // add listener
 prevArrowElement.addEventListener('click', function () {
+    const lastIndex = slideElements.length - 1
 
     const slideAttiva = slideElements[currentIndex]
     slideAttiva.classList.remove('active')
 
-    
-    const slideSuccessiva = slideElements[currentIndex + 1]
+    if(currentIndex === 0){
+        lastIndex
+    }else{
+        currentIndex--
+    }
+
+
+    const slideSuccessiva = slideElements[currentIndex ]
     slideSuccessiva.classList.add('active')
 
-    currentIndex++
+    // currentIndex++
 
 
 
