@@ -117,7 +117,7 @@ prevArrowElement.addEventListener('click', function () {
     slideAttiva.classList.remove('active')
 
     if(currentIndex === 0){
-        lastIndex
+       currentindex = lastIndex
     }else{
         currentIndex--
     }
